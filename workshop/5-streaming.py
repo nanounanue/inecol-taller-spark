@@ -9,7 +9,8 @@ if __name__ == "__main__":
 
     sc = SparkContext(appName = "Contador")
     ssc = StreamingContext(sc, 1)
-
+     
+    ## Apagamos el Logeo al mínimo, (No es el mejor lugar para hacerlo)
     logger = sc._jvm.org.apache.log4j
     logger.LogManager.getLogger("org").setLevel( logger.Level.OFF )
     logger.LogManager.getLogger("akka").setLevel( logger.Level.OFF )
